@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="C_API" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/C_API" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="$(Codeblocks)/../wxWidgets/lib/gcc_lib/msw" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(Codeblocks)/../wxWidgets/lib/gcc_lib/msw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="libwxmsw28.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxzlib.a" />
+					<Add directory="$(Codeblocks)/../wxWidgets/lib/gcc_lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/C_API" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="$(Codeblocks)/../wxWidgets/lib/gcc_lib/msw" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(Codeblocks)/../wxWidgets/lib/gcc_lib/msw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libwxmsw28.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxzlib.a" />
+					<Add directory="$(Codeblocks)/../wxWidgets/lib/gcc_lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add directory="$(Codeblocks)/../wxWidgets/include" />
+			<Add directory="$(Codeblocks)/../wxWidgets/contrib/include" />
+			<Add directory="C:/MySQL_Connector/mysql-connector-c-6.1.9-win32/include/mysql/psi" />
+			<Add directory="C:/MySQL_Connector/mysql-connector-c-6.1.9-win32/include/mysql" />
+			<Add directory="C:/MySQL_Connector/mysql-connector-c-6.1.9-win32/include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(Codeblocks)/../wxWidgets/include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-mthreads" />
+			<Add library="libkernel32.a" />
+			<Add library="libuser32.a" />
+			<Add library="libgdi32.a" />
+			<Add library="libwinspool.a" />
+			<Add library="libcomdlg32.a" />
+			<Add library="libadvapi32.a" />
+			<Add library="libshell32.a" />
+			<Add library="libole32.a" />
+			<Add library="liboleaut32.a" />
+			<Add library="libuuid.a" />
+			<Add library="libcomctl32.a" />
+			<Add library="libwsock32.a" />
+			<Add library="libodbc32.a" />
+			<Add library="libwxcode_msw28_freechart.a" />
+			<Add library="libkwic.a" />
+			<Add library="C:\MySQL_Connector\mysql-connector-c-6.1.9-win32\lib\libmysql.lib" />
+		</Linker>
+		<Unit filename="C_APIApp.cpp" />
+		<Unit filename="C_APIApp.h" />
+		<Unit filename="C_APIMain.cpp" />
+		<Unit filename="C_APIMain.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="wxsmith/C_APIframe.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="C_APIApp.cpp" main="C_APIFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/C_APIframe.wxs" src="C_APIMain.cpp" hdr="C_APIMain.h" fwddecl="0" i18n="1" name="C_APIFrame" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
